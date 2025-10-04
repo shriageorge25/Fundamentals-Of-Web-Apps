@@ -1,5 +1,6 @@
-```mermaid
+# 1. Normal Notes App (non-SPA)
 
+```mermaid
 sequenceDiagram
     participant User
     participant Browser
@@ -15,39 +16,23 @@ sequenceDiagram
     participant Browser
     participant Server
 
-    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa
-    activate Server
+    Browser->>Server: GET /spa
     Server-->>Browser: HTML document
-    deactivate Server
-
-    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
-    activate Server
+    Browser->>Server: GET /main.css
     Server-->>Browser: CSS file
-    deactivate Server
-
-    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/spa.js
-    activate Server
-    Server-->>Browser: JavaScript file
-    deactivate Server
-
-    Note right of Browser: Browser runs spa.js which fetches the notes data from server
-
-    Browser->>Server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
-    activate Server
-    Server-->>Browser: JSON data of existing notes
-    deactivate Server
-
-    Note right of Browser: Browser renders notes dynamically without reloading the page
+    Browser->>Server: GET /spa.js
+    Server-->>Browser: JS file
+    Note right of Browser: Browser runs JS which fetches data.json
+    Browser->>Server: GET /data.json
+    Server-->>Browser: Notes data
+    Note right of Browser: Browser renders notes dynamically
 sequenceDiagram
     participant User
     participant Browser
     participant Server
 
     User->>Browser: Types a note and clicks Save
-    Note right of Browser: JavaScript captures the input (no page reload)
-    Browser->>Server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa<br>with JSON data { content, date }
-    activate Server
-    Server-->>Browser: 201 Created (confirmation)
-    deactivate Server
-    Note right of Browser: Browser updates the notes list on the page using JS<br>without reloading
-
+    Note right of Browser: JS sends the note via fetch (no reload)
+    Browser->>Server: POST /new_note_spa with JSON {content, date}
+    Server-->>Browser: 201 Created
+    Note right of Browser: Browser updates the note list instantly
