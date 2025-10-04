@@ -1,4 +1,4 @@
-# 1. Normal Notes App (non-SPA)
+# 1. Normal Notes App (non-SPA)#
 
 ```mermaid
 sequenceDiagram
@@ -12,6 +12,7 @@ sequenceDiagram
     Browser->>Server: (maybe) GET all notes again
     Server-->>Browser: List of notes (now includes new one)
     Browser->>User: Shows updated list on the page
+```mermaid
 sequenceDiagram
     participant Browser
     participant Server
@@ -26,6 +27,7 @@ sequenceDiagram
     Browser->>Server: GET /data.json
     Server-->>Browser: Notes data
     Note right of Browser: Browser renders notes dynamically
+```mermaid
 sequenceDiagram
     participant User
     participant Browser
