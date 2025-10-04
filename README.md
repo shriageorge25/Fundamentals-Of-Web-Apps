@@ -13,7 +13,7 @@ sequenceDiagram
     Browser->>User: Shows updated list on the page
 
 
-```mermaid
+
 ## When user opens the SPA version
 sequenceDiagram
     participant Browser
@@ -42,7 +42,7 @@ sequenceDiagram
     deactivate Server
 
     Note right of Browser: Browser renders notes dynamically without reloading the page
-```mermaid
+
 ## When user creates a new note in the SPA version
 sequenceDiagram
     participant User
