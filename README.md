@@ -11,10 +11,6 @@ sequenceDiagram
     Browser->>Server: (maybe) GET all notes again
     Server-->>Browser: List of notes (now includes new one)
     Browser->>User: Shows updated list on the page
-
-
-
-
 sequenceDiagram
     participant Browser
     participant Server
@@ -42,8 +38,6 @@ sequenceDiagram
     deactivate Server
 
     Note right of Browser: Browser renders notes dynamically without reloading the page
-
-
 sequenceDiagram
     participant User
     participant Browser
