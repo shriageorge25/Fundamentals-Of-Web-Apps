@@ -1,5 +1,5 @@
 ```mermaid
-##When user opens the app
+
 sequenceDiagram
     participant User
     participant Browser
@@ -14,7 +14,7 @@ sequenceDiagram
 
 
 
-## When user opens the SPA version
+
 sequenceDiagram
     participant Browser
     participant Server
@@ -43,7 +43,7 @@ sequenceDiagram
 
     Note right of Browser: Browser renders notes dynamically without reloading the page
 
-## When user creates a new note in the SPA version
+
 sequenceDiagram
     participant User
     participant Browser
