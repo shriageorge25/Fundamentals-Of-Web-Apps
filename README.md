@@ -1,4 +1,4 @@
-# 1. Normal Notes App (non-SPA)#
+# 1. Normal Notes App (non-SPA)
 
 ```mermaid
 sequenceDiagram
