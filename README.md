@@ -1,4 +1,8 @@
-# 1. Normal Notes App (non-SPA)
+
+
+---
+
+## 1. Basic Note Save Flow
 
 ```mermaid
 sequenceDiagram
@@ -12,6 +16,12 @@ sequenceDiagram
     Browser->>Server: (maybe) GET all notes again
     Server-->>Browser: List of notes (now includes new one)
     Browser->>User: Shows updated list on the page
+```
+
+---
+
+## 2. SPA Initial Load Flow
+
 ```mermaid
 sequenceDiagram
     participant Browser
@@ -27,6 +37,12 @@ sequenceDiagram
     Browser->>Server: GET /data.json
     Server-->>Browser: Notes data
     Note right of Browser: Browser renders notes dynamically
+```
+
+---
+
+## 3. SPA Note Save Flow (No Page Reload)
+
 ```mermaid
 sequenceDiagram
     participant User
@@ -38,3 +54,8 @@ sequenceDiagram
     Browser->>Server: POST /new_note_spa with JSON {content, date}
     Server-->>Browser: 201 Created
     Note right of Browser: Browser updates the note list instantly
+```
+
+---
+
+
